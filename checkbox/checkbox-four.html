@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>四层全选逻辑</title>
+    <style>
+    
+ul,ol,dl{
+	list-style: none;
+}
+/*单选框样式*/
+.option-check {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer; 
+}
+.option-check label.custom-check {
+float: left;
+margin-top: 2px;
+margin-right: 10px;
+height: 16px;
+padding-left: 25px;
+cursor: pointer;
+position: relative;
+line-height: inherit; 
+}
+.option-check label.custom-check img {
+width: 15px;
+height: 15px;
+position: absolute;
+top: 2px;
+left: 0; 
+}
+.option-check label.custom-check input + img {
+display: none;
+position: absolute;
+top: 2px;
+left: 0; 
+}
+.option-check label.custom-check input[type="radio"] {
+/*display: none; */
+position:absolute;
+clip:rect(0px 0px 0px 0px);
+}
+.option-check label.custom-check input[type="radio"]:checked + img {
+display: inline-block; 
+}
+.option-check label.custom-check input[type="checkbox"] {
+/*display: none; */
+position:absolute;
+clip:rect(0px 0px 0px 0px);
+}
+.option-check label.custom-check input[type="checkbox"]:checked + img {
+display: inline-block; 
+}
+.a-a{
+    margin-left: 30px;
+}
+.a-b{
+    margin-left: 60px;
+}
+</style>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="cab-check-all" data-target="cab-check-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-a">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="part-check-all cab-check-1" data-target="cab-check-1-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.1</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-b">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-1 cab-check-1-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.1.1</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-1 cab-check-1-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.1.2</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-1 cab-check-1-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.1.3</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-a">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="part-check-all cab-check-1" data-target="cab-check--2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.2</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-b">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-1 cab-check--2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.2.1</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-1 cab-check--2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.2.2</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-1 cab-check--2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项1.2.3</span>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="cab-check-all" data-target="cab-check-2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-a">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="part-check-all cab-check-2" data-target="cab-check-2-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.1</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-b">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-2 cab-check-2-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.1.1</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-2 cab-check-2-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.1.2</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-2 cab-check-2-1" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.1.3</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-a">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="part-check-all cab-check-2" data-target="cab-check-2-2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.2</span>
+                </label>
+            </div>
+        </div>
+        <div class="a-b">
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-2 cab-check-2-2"  value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.2.1</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-2 cab-check-2-2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.2.2</span>
+                </label>
+            </div>
+            <div class="option-check">
+                <label  class="custom-check" onselectstart="return false">
+                    <img src="./not-check.png" alt="">
+                    <input type="checkbox" checked name="" class="check-one cab-check-2 cab-check-2-2" value="">
+                    <img src="./check.png" alt="">
+                    <span>选项2.2.3</span>
+                </label>
+            </div>
+        </div>
+        <div class="option-check">
+            <label  class="custom-check" onselectstart="return false">
+                <img src="./not-check.png" alt="">
+                <input type="checkbox" checked name="" class="checkAll" value="">
+                <img src="./check.png" alt="">
+                <span>全选</span>
+            </label>
+        </div>
+    </div>
+</body>
+<script src="./jquery-min.js"></script>
+<script>
+    var checkAll     = $('.checkAll'),   //全选按钮
+        cabCheckAll  = $('.cab-check-all'),  //立柜部分选择按钮
+        partCheckAll =$('.part-check-all'), //五金部分选择按钮
+        checkOne     =$('.check-one');       //单选按钮
+        
+    // 判断是否全选
+    checkAll.on('change',function(){
+        if ($(this).prop('checked')) {
+            checkAll.prop('checked', true);
+            cabCheckAll.prop('checked', true);
+            partCheckAll.prop('checked', true);
+            checkOne.prop('checked', true);
+        } else {
+            checkAll.prop('checked', false);
+            cabCheckAll.prop('checked', false);
+            partCheckAll.prop('checked', false);
+            checkOne.prop('checked', false);
+        }
+    })
+    //立柜部分全选
+    cabCheckAll.on('change', function(event) {
+        var target = $(this).data('target'); // 所有的立柜子商品
+        if ($(this).prop('checked')) {
+            $('.' + target).prop('checked', true);
+            setCheckAll();
+        } else {
+            $('.' + target).prop('checked', false);
+            checkAll.prop('checked', false);
+        }
+    });
+    //五金部分全选
+    partCheckAll.on('change', function() {
+        var target = $(this).data('target'); // 所有的五金子商品
+        if ($(this).prop('checked')) {
+            $('.' + target).prop('checked', true);
+            setCheckAll();
+        } else {
+            $('.' + target).prop('checked', false);
+            checkAll.prop('checked', false);
+            setCabCheckAll();
+        }
+    });
+    // 单个商品选中
+    checkOne.on('change', function() {
+        if ($(this).prop('checked')) {
+            setCheckAll(); 
+        } else {
+            checkAll.prop('checked', false);
+            setPartCheckAll();
+        }
+    })
+    // 判断所有商品是否全部选中
+    function setCheckAll() {
+        var notCheck = $('.check-one:not(:checked)');
+        if (notCheck.length <= 0) {
+            cabCheckAll.prop('checked', true);
+            partCheckAll.prop('checked', true); 
+            checkAll.prop('checked', true);
+        } else {
+            checkAll.prop('checked', false);
+            setPartCheckAll();
+        }
+    }
+    // 判断五金部分子商品是否全部选中
+    function setPartCheckAll() {
+        $.each(partCheckAll, function(n, elem) {
+            var target = $(elem).data('target'),
+                notCheck = $('.' + target + ':not(:checked)');
+            if (notCheck.length <= 0) {
+                $(elem).prop('checked', true);
+            } else {
+                $(elem).prop('checked', false);
+            }
+            setCabCheckAll();
+        });
+    }
+    // 判断立柜部分子商品中下级商品是否全部选中
+    function setCabCheckAll() {
+        $.each(cabCheckAll, function(n, elem) {
+            var target = $(elem).data('target'),
+                notCheck = $('.' + target + ':not(:checked)');
+            if (notCheck.length <= 0) {
+                $(elem).prop('checked', true);
+            } else {
+                $(elem).prop('checked', false);
+            }
+        });
+    }
+</script>
+</html>

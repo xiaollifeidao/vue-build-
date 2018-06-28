@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+/*单选框样式*/
+.option-check {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  cursor: pointer; 
+}
+.option-check label.custom-check {
+float: left;
+margin-top: 2px;
+margin-right: 10px;
+height: 16px;
+padding-left: 25px;
+cursor: pointer;
+position: relative;
+line-height: inherit; 
+}
+.option-check label.custom-check img {
+width: 15px;
+height: 15px;
+position: absolute;
+top: 4px;
+left: 0; 
+}
+.option-check label.custom-check input + img {
+display: none;
+position: absolute;
+top: 4px;
+left: 0; 
+}
+.option-check label.custom-check input[type="radio"] {
+/*display: none; */
+position:absolute;
+clip:rect(0px 0px 0px 0px);
+}
+.option-check label.custom-check input[type="radio"]:checked + img {
+display: inline-block; 
+}
+.option-check label.custom-check input[type="checkbox"] {
+/*display: none; */
+position:absolute;
+clip:rect(0px 0px 0px 0px);
+}
+.option-check label.custom-check input[type="checkbox"]:checked + img {
+display: inline-block; 
+}
+</style>
+</head>
+<body>
+    <div class="option-check">     
+    <label for="ordinary" class="custom-check" onselectstart="return false">
+            <img src="/static/img/choose_default.png" alt="">
+            <input type="checkbox" class="checkinp" name="checkbox[]" id="ordinary" value="">
+            <img src="/static/img/checkboxControl.png" alt="">
+            <span>增值税普通发票</span>
+        </label>
+    </div>
+</body>
+</html>

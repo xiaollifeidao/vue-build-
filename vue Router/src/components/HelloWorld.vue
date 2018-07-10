@@ -2,8 +2,10 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>HelloWorld</h2>
-    <h2>我是a路由引进来的</h2>
+    <router-link to="/Path">我是a路由引进来的</router-link >
+    <img src="./../assets/images/timg.jpg" alt="">
   </div>
+
 </template>
 
 <script>
@@ -18,7 +20,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 h1, h2 {
   font-weight: normal;
 }

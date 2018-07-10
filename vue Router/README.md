@@ -1,7 +1,11 @@
 # vuexm
 
 > A Vue.js project
+vue 脚手架搭建项目 
 
+1、解决打包路径问题 
+2、解决多人开发路由配置
+3、样式模块化开发问题
 ## Build Setup
 
 ``` bash

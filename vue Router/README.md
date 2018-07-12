@@ -1,22 +1,18 @@
 # vuexm
 
 > A Vue.js project
-vue 脚手架搭建项目 
 
-1、解决打包路径问题 
-2、解决多人开发路由配置
-3、样式模块化开发问题
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+npm install  安装需要的插件
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run dev    开发环境
 
 # build for production with minification
-npm run build
+npm run build   线上环境
 
 # build for production and view the bundle analyzer report
 npm run build --report

@@ -1,0 +1,36 @@
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/ }
+  select {
+    width: 144px;
+    height: 32px;
+    font-size: 12px;
+    color: #666666;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("../../img/userinfo/dropdown.png") no-repeat right center;
+    background-position-x: 118px;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 20px; }
+    select.checked-select {
+      background: url("../../img/userinfo/dropup.png") no-repeat right center;
+      background-position-x: 118px; }
+  select::-ms-expand {
+    display: none; }
+
+文本溢出省略号
+多行
+overflow: hidden;
+text-overflow:ellipsis;//文本溢出显示省略号
+ display: -webkit-box;
+ -webkit-line-clamp: 5;
+-webkit-box-orient: vertical;
+单行
+white-space: nowrap;
+ text-overflow: ellipsis;
+  overflow: hidden;
+append() - 在被选元素的结尾插入内容
+prepend() - 在被选元素的开头插入内容
+after() - 在被选元素之后插入内容
+before() - 在被选元素之前插入内容

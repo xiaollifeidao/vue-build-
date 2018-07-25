@@ -1,4 +1,2 @@
-const data = function () {
-    alert(1);
-};
-module.exports = data;
+function test() { console.log("test"); }
+export default test;

@@ -47,6 +47,10 @@ module.exports = {
         use: [ 'babel-loader' ]
       },
       {
+        test: require.resolve('jquery'),
+        loader: 'expose?jQuery!expose?$'
+      },
+      {
         test: /\.scss$/,
         use: [
           { loader: 'style-loader' },

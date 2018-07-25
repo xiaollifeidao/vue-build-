@@ -1,4 +1,1 @@
-function data() {
-    alert(666)
-}
-export default data;
+export default data = 2;

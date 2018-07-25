@@ -1,17 +1,17 @@
-/*Çå³ýieµÄÄ¬ÈÏÑ¡Ôñ¿òÑùÊ½Çå³ý£¬Òþ²ØÏÂÀ­¼ýÍ·*/ }
+/*æ¸…é™¤ieçš„é»˜è®¤é€‰æ‹©æ¡†æ ·å¼æ¸…é™¤ï¼Œéšè—ä¸‹æ‹‰ç®­å¤´*/ }
   select {
     width: 144px;
     height: 32px;
     font-size: 12px;
     color: #666666;
-    /*ºÜ¹Ø¼ü£º½«Ä¬ÈÏµÄselectÑ¡Ôñ¿òÑùÊ½Çå³ý*/
+    /*å¾ˆå…³é”®ï¼šå°†é»˜è®¤çš„selecté€‰æ‹©æ¡†æ ·å¼æ¸…é™¤*/
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    /*ÔÚÑ¡Ôñ¿òµÄ×îÓÒ²àÖÐ¼äÏÔÊ¾Ð¡¼ýÍ·Í¼Æ¬*/
+    /*åœ¨é€‰æ‹©æ¡†çš„æœ€å³ä¾§ä¸­é—´æ˜¾ç¤ºå°ç®­å¤´å›¾ç‰‡*/
     background: url("../../img/userinfo/dropdown.png") no-repeat right center;
     background-position-x: 118px;
-    /*ÎªÏÂÀ­Ð¡¼ýÍ·Áô³öÒ»µãÎ»ÖÃ£¬±ÜÃâ±»ÎÄ×Ö¸²¸Ç*/
+    /*ä¸ºä¸‹æ‹‰å°ç®­å¤´ç•™å‡ºä¸€ç‚¹ä½ç½®ï¼Œé¿å…è¢«æ–‡å­—è¦†ç›–*/
     padding-right: 20px; }
     select.checked-select {
       background: url("../../img/userinfo/dropup.png") no-repeat right center;
@@ -19,18 +19,51 @@
   select::-ms-expand {
     display: none; }
 
-ÎÄ±¾Òç³öÊ¡ÂÔºÅ
-¶àÐÐ
+æ–‡æœ¬æº¢å‡ºçœç•¥å·
+å¤šè¡Œ
 overflow: hidden;
-text-overflow:ellipsis;//ÎÄ±¾Òç³öÏÔÊ¾Ê¡ÂÔºÅ
+text-overflow:ellipsis;//æ–‡æœ¬æº¢å‡ºæ˜¾ç¤ºçœç•¥å·
  display: -webkit-box;
  -webkit-line-clamp: 5;
 -webkit-box-orient: vertical;
-µ¥ÐÐ
+å•è¡Œ
 white-space: nowrap;
  text-overflow: ellipsis;
   overflow: hidden;
-append() - ÔÚ±»Ñ¡ÔªËØµÄ½áÎ²²åÈëÄÚÈÝ
-prepend() - ÔÚ±»Ñ¡ÔªËØµÄ¿ªÍ·²åÈëÄÚÈÝ
-after() - ÔÚ±»Ñ¡ÔªËØÖ®ºó²åÈëÄÚÈÝ
-before() - ÔÚ±»Ñ¡ÔªËØÖ®Ç°²åÈëÄÚÈÝ
+append() - åœ¨è¢«é€‰å…ƒç´ çš„ç»“å°¾æ’å…¥å†…å®¹
+prepend() - åœ¨è¢«é€‰å…ƒç´ çš„å¼€å¤´æ’å…¥å†…å®¹
+after() - åœ¨è¢«é€‰å…ƒç´ ä¹‹åŽæ’å…¥å†…å®¹
+before() - åœ¨è¢«é€‰å…ƒç´ ä¹‹å‰æ’å…¥å†…å®¹
+
+ç€‘å¸ƒæµ
+function waterFull() {
+    var $boxs = $("#main>div");
+    var $boxW = $boxs.eq(0).outerWidth();
+    var cols = Math.floor($(window).width() / $boxW);
+    $("#main").width(cols * $boxW).css({
+        margin: '0 auto'
+    });
+    //
+    var hArr = [];
+    $boxs.each(function(index, value) {
+        h = $boxs.eq(index).outerHeight();
+        if(index < cols) {
+            hArr.push(h);
+        } else {
+            //æ•°ç»„ä¸­æœ€å°çš„
+            var minH = Math.min.apply(null, hArr);
+            //æœ€å°å€¼åœ¨æ•°ç»„ä¸­çš„ç´¢å¼•
+            var minIndex = $.inArray(minH, hArr);
+            $(value).css({
+                'position': 'absolute',
+                left: minIndex * $boxW + 'px',
+                top: minH + 'px'
+            })
+            hArr[minIndex] += $boxs.eq(index).outerHeight()
+        }
+    })
+    var maxH = Math.max.apply(null, hArr);
+    $("#main").height(maxH);
+}
+
+height: calc(100% - 76px)//

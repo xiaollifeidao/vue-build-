@@ -67,3 +67,47 @@ function waterFull() {
 }
 
 height: calc(100% - 76px)//
+
+清楚表格默认样式//
+table{
+    width:100%;text-align:center;border-collapse:collapse;border-spacing:0; 
+    td{
+        word-break: break-all; word-wrap:break-word;
+    }
+}
+
+滚动固定头部  
+.right-box{
+margin-left: 20px;
+width: 340px;
+position: absolute;
+right: 0;
+top: 0;
+}
+.center-right{
+    padding: 30px 30px 0;
+    background: white;
+    transition: top .5s;
+}
+    var addTo = (function () {
+    var btn = document.getElementsByClassName('add-btn');  //私有属性名字
+    return {
+        //公有方法
+        push: function (left,right) {  //left 传入参照定位节点  right  需要定位节点
+            $(document).scroll(function () {
+                var height = left.offset().top - $(document).scrollTop();
+                if (height <= 50) {
+                    right.css({
+                        'position': 'fixed',
+                        'top': '10px',
+                    });
+                } else {
+                    right.css({
+                        'position': 'static',
+                        'top': '0',
+                    });
+                }
+            })
+        }
+    }
+})();

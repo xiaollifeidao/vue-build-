@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+    <title>Document</title>
+    <style>
+        .box{
+            border:1px solid #dddddd;
+            width: 300px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+<script type="text/javascript" src="./jquery-min.js"></script>
+<script type="text/javascript" src="./lib/layui/layui.all.js"></script>
+<script>
+    layui.tree({
+        elem: '.box', //传入元素选择器
+        nodes: [{
+            "name": "测试1测试1测试1测试1测试1测试1测试1测试1测试1",
+            "id": 24,
+            "children": [{
+                "name": "测试测试1测试1测试1测试1测试112",
+                "id": 25,
+                "children": [{
+                    "name": "测试123",
+                    "id": 27,
+                    "children": [{
+                        "name": "1234",
+                        "id": 33,
+                        "children": [{
+                            "name": "测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1",
+                            "id": 33,
+                            "children": []
+                        }]
+                    }]
+                }]
+            }]
+        }, {
+            "name": "1",
+            "id": 39,
+            "children": [{
+                "name": "2",
+                "id": 40,
+                "children": [{
+                    "name": "4",
+                    "id": 42,
+                    "children": []
+                }]
+            }, {
+                "name": "测试1测试1测试1测试1测试1测试1测试1测试1测试1测试1",
+                "id": 41,
+                "children": []
+            }]
+        }],
+        click: function (node, item) {
+            var item = $(item); //item 为a点击元素 //&& (i.on("click", l),// n.on("click", l))  插件双击事件 dblclick //移除左侧箭头点击事件 i.on("click",l), e.children("i")
+
+            if (item.hasClass('layui-icon')) {
+            } else {
+            }
+            console.log(item)
+        },
+        skin: [
+            'shihuang'
+        ],
+    });
+</script>
+</html>

@@ -1,4 +1,4 @@
-/*清除ie的默认选择框样式清除，隐藏下拉箭头*/ }
+﻿/*清除ie的默认选择框样式清除，隐藏下拉箭头*/ }
   select {
     width: 144px;
     height: 32px;
@@ -111,3 +111,10 @@ top: 0;
         }
     }
 })();
+
+
+边框三角 
+display: inline-block;margin-left: 5px;
+border-color: transparent transparent transparent #fff;
+border-width: 4px;vertical-align: 1px;
+border-style: dashed dashed solid; 

@@ -1,0 +1,27 @@
+//上传图片
+<input type="file" id="files" name="files[]" multiple="" style="position: absolute;left: -9999px;">
+    <label for="files">
+        <img src="../../img/room/upload-img.png" id="show_pic"/>
+    </label>
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        //Blob是计算机界通用术语之一，全称写作：BLOB (binary large object)，表示二进制大对象。
+        //全部支持
+        function handleFileSelect(evt) {
+            var files = evt.target.files, f = files[0];
+            if (!/image\/\w+/.test(f.type)) {
+                alert("请确保文件为图像类型");
+                return false;
+            }
+            var reader = new FileReader();
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    var show_pic = document.getElementById("show_pic");
+                    show_pic.src = e.target.result;
+                };
+            })(f);
+            reader.readAsDataURL(f);
+        }
+        document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    } else {
+        alert('该浏览器不全部支持File APIs的功能');
+    }

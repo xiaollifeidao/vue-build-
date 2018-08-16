@@ -118,3 +118,21 @@ display: inline-block;margin-left: 5px;
 border-color: transparent transparent transparent #fff;
 border-width: 4px;vertical-align: 1px;
 border-style: dashed dashed solid; 
+
+js实现文本复制
+//复制模型名称 
+    $('.entry-house').on('click', function () {
+        var _this = $(this);
+        var val = _this.next().find('h3');
+        window.getSelection().selectAllChildren(val[0]);
+        document.execCommand("Copy");
+        layer.msg('成功复制到剪贴板', { icon: 6, time:1000});
+    })
+
+    旋转
+     transition: all 0.3s ease-out; 
+        transform: rotate(0deg);
+        &.order-change{
+            transition: all 0.3s ease-out; 
+            transform: rotate(-180deg);
+        }

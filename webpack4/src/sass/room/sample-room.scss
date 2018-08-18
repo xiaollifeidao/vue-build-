@@ -1,0 +1,263 @@
+// 我的样板间样式
+// 修改弹框默认样式
+.swal2-title,.swal2-title:before{
+    display: none;
+    background: url(../../images/666.jpg)
+}
+.swal2-confirm{
+    background: #75b94b !important;
+}
+a:hover{
+    color: white;
+    cursor: pointer;
+}
+i{
+    font-style: normal;
+}
+$green:#75b94b;
+$yellow:#fd9000;
+$ddd:#dddddd;
+.green-btn{
+    display: inline-block;
+    text-align: center;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: white;
+    border-radius: 2px;
+    background: $green;
+}
+.yellow-btn{
+    @extend .green-btn;
+    background: $yellow;
+}
+// 我的样板间样式
+h2{
+    padding-bottom: 30px;
+    &:before{
+        bottom: 30px;
+    }
+    i{
+        display: inline-block;
+        width: 10px;
+        height: 14px;
+        margin: 0 3px;
+        margin-bottom: -2px;
+        background-position: -48px -25px;
+    }
+}
+.client-info{
+    padding-left: 90px;
+    .client{
+        .client-content{
+            position: relative;
+        }
+        >div{
+            .order-box{  //可输入的订单表格样式
+                display: inline-block;
+                margin-bottom: 24px;
+                width: 350px;
+                position: relative;
+                border: 1px solid $ddd;
+                input{
+                    border: 0;
+                }
+                .order-btn{
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    right: 0;
+                    top: 0;
+                    transition: all 0.3s ease-out; 
+                    transform: rotate(0deg);
+                    &.order-change{
+                        transition: all 0.3s ease-out; 
+                        transform: rotate(-180deg);
+                    }
+                }
+                &::after{
+                    content: '';
+                    display:inline-block;
+                    width: 1px;
+                    height:24px;
+                    background: $ddd;
+                    position: absolute;
+                    right: 40px;
+                    top: 8px;
+                    }
+            }
+            // 可以选择的订单列表
+            .table-order{
+                position: absolute;
+                left: 94px;
+                top: 42px;
+                background: white;
+                border: 1px solid $ddd;
+                z-index: 1;
+                table{
+                    margin-bottom: 0;
+                    tr{
+                        &:last-of-type{
+                            td{
+                                border-bottom: 0;
+                            }
+                        }
+                        &:hover td{
+                            background: #f1f8ff;
+                            cursor: pointer;
+                        }
+                    }
+                    th{
+                        height: 42px;
+                        border-bottom: 1px solid $ddd;
+                        font-size: 12px;
+                        color: #111111;
+                    }
+                    td{
+                        height: 42px;
+                        font-size: 12px;
+                        color: #333333;
+                    }
+                }
+                .invoice-wrap{
+                    max-height: 210px;
+                    overflow: auto;
+                }
+            }
+        }
+        label{
+            font-size: 14px;
+            color: #333333;
+        }
+        input{
+            font-size: 14px;
+        }
+        //操作按钮样式
+        .white-btn{  
+            @extend .green-btn;
+            width: 80px;
+            height: 32px;
+            line-height: 32px;
+            background: white;
+            color: $green;
+            font-size: 14px;
+            border: solid 1px $green;
+            margin:0 20px 24px 0;
+            position: relative;
+            img{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .add-btn{
+            @extend .white-btn;
+            background:white;
+            position: relative;
+            padding-left: 15px;
+            i{
+                position: absolute;
+                left: 16px;
+                top: -2px;
+                font-size: 20px;
+                font-weight: 700;
+            }
+        }
+        .space{
+            >div{
+                display: inline-block;
+                max-width: 314px;
+                vertical-align: top;
+            }
+            .add-box{
+                margin-left: -4px;
+                ul{
+                    position: absolute;
+                    width: 304px;
+                    left: 194px;
+                    top: 200px;
+                    background: white;
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    box-shadow: 0px 0px 12px 0px rgba(0, 63, 189, 0.07);
+                    border: solid 1px #dddddd;
+                    z-index: 1;
+                    &:after{
+                        display: inline-block;
+                        content: '';
+                        width:0;
+                        height: 0;
+                        position:absolute;
+                        left:18px;
+                        top:-12px;
+                        border-left:7px transparent dashed;
+                        border-right:7px transparent dashed;
+                        border-top:7px transparent dashed;
+                        border-bottom:7px white solid;
+                    }
+                    &:before{
+                        display: inline-block;
+                        content: '';
+                        width:0;
+                        height: 0;
+                        position:absolute;
+                        left:18px;
+                        top:-14px;
+                        border-left:7px transparent dashed;
+                        border-right:7px transparent dashed;
+                        border-top:7px transparent dashed;
+                        border-bottom:7px $ddd solid;
+                    }
+                    li{
+                        padding: 5px 15px;
+                        float: left;
+                        background: white;
+                        border: solid 1px #dddddd;
+                        font-size: 12px;
+                        color: #666666;
+                        margin-right: 14px;
+                        margin-bottom: 10px;
+                        &:hover{
+                            cursor: pointer;
+                            border: 1px solid $green;
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+        // 限制文本输入样式
+        .area-box{
+            position: relative;
+            textarea{
+                width: 350px;
+                height: 140px;
+                padding-bottom: 30px;
+                padding-right: 12px;
+                font-size: 12px;
+                overflow: hidden;
+            }
+            p{
+                position: absolute;
+                left: 370px;
+                bottom: 28px;
+                span{
+                    color: $green;
+                    display: inline-block;
+                    width: 30px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .save-btn{
+        padding-left: 94px;
+    }
+}
+//输入框获取焦点事件
+input:focus , textarea:focus{
+    border: 1px solid $green !important;
+}

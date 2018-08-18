@@ -1,0 +1,23 @@
+
+body{
+    background: #ff6666;
+    h1,h2,h3{
+        background: blue;
+        font-size: 30px;
+    }
+    a{
+        font-size: 30px;
+    }
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background: url('../../images/666.jpg');
+  }
+  .wrap{
+    width: 1000px;
+    height: 500px;
+    margin: 100px auto;
+    background: url('../../images/gulp.png');
+  }

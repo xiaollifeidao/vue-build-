@@ -1,0 +1,1 @@
+import "sass/room/sample-room.scss";

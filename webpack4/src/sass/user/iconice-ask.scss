@@ -1,0 +1,290 @@
+
+$green:rgb(117,185,75);
+.green{
+    color: $green !important;
+    background: url(../../images/666.jpg)
+}
+$yellow:#ffa42b;
+a{
+    &:visited {   
+        color:black;   
+    } 
+}
+.contain{
+    width: auto;
+    margin: 10px;
+}
+.border-yellow{
+    border: 1px solid #ff9200 !important;
+    color: #ff9200 !important;
+}
+.header-title{
+    h2{
+        a{
+            font-size: 18px;
+            color: rgb(51, 51, 51);
+            &:nth-of-type(1){
+                margin-right: 5px;
+            }
+        }
+        margin: 0;
+        padding: 19px 12px;
+        background-position:124px 36px;
+        &:before{
+            bottom: 22px;
+        }
+    }
+}
+//索取发票 开具发票样式
+.table-info{
+    p{
+        span{
+            color: $green;
+        }
+    }
+}
+.table{
+    border-bottom: 0;
+}
+.invoice-wrap{
+    min-height: 204px;
+    max-height: 216px;
+    overflow-y: auto;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.invoice-box{ //开具发票
+    width: 560px;
+    position: relative;
+    padding-bottom: 42px;
+    .invoice-title{
+        margin-bottom: 0;
+        border: 1px solid #ddd;
+        thead{
+            th{
+                color: #2c2c2c;
+                height: 40px;
+                padding: 0;
+                font-size: 12px;
+                padding-left: 8px;
+                &:nth-of-type(1){
+                    padding-left: 54px;
+                }
+            }
+        }
+    }
+    .invoice-table{
+        margin-bottom: 0;
+        padding-bottom: 0;
+        tbody{
+            tr{
+                &:nth-of-type(1){
+                    td{
+                        border-top: 0;
+                    }
+                }
+            }
+            td{
+                color: #666666;
+                height: 40px;
+                font-size: 12px;
+                .option-check{
+                    img{
+                        width: 24px;
+                    }
+                    span{
+                        margin-left: 12px;
+                        color: #666666;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .invoice-check{
+        width: 560px;
+        height: 46px;
+        line-height: 48px;
+        position: absolute;
+        border: 1px solid #ddd;
+        background: white;
+        bottom: 0;
+        left: 0;
+        .check-left{
+            display: inline-block;
+            width: 77%;
+            .custom-check{
+                margin-left: 18px;
+                width: 34px;
+                img{
+                    width: 15px;
+                }
+                span{
+                    color: #333333;
+                    font-size: 12px;
+                }
+            }
+            p{
+                display: inline-block;
+                margin-left: 10px;
+                font-size: 12px;
+                color: #666666;
+                height: 20px;
+                line-height: 20px;
+                margin-bottom: 0;
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    border-left: 1px solid #cccccc;
+                    padding-left: 10px;
+                    width: 1px;
+                    height: 12px;
+                }
+                i{
+                    color: $yellow;
+                    margin: 0 5px;
+                }
+            }
+        }
+        .check-right{
+            display: inline-block;
+            width: 21%;
+            .submit-btn{
+                width: 116px;
+                height: 30px;
+            }
+        }
+    }
+}
+.apply-box{ //已申请发票
+    margin-top: 30px;
+    .table{
+        border: 1px solid #dddddd;
+        border-bottom: 0;
+        tr{
+            font-size: 12px;
+        }
+        thead{
+            tr{
+                th{
+                    color: #2c2c2c;
+                    height: 42px;
+                    border-bottom: 1px solid #dddddd;
+                    &:nth-of-type(1){
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    color: #666666;
+                    height: 42px;
+                    &:nth-of-type(1){
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+//批量开具发票样式
+.modal-body{
+    padding:20px 40px;
+    h5{
+        text-align: center;
+        font-size: 18px;
+        color: #333333;
+        button{
+            margin-top: -10px;
+            margin-right: -10px;
+        }
+    }
+    form{
+        padding: 0;
+        .batch-title{
+            margin: 0;
+            margin-top: 20px;
+            a{
+                display: inline-block;
+                width: 90px;
+                height: 24px;
+                line-height: 24px;
+                font-size: 12px;
+                color: #666666;
+                text-align: center;
+                border: 1px solid #dddddd;
+            }
+        }
+        .batch-prompt{
+            color: #999999;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 30px;
+            font-size: 12px;
+            background-position:10px 11px;
+        }
+        .batch-info{
+            width: 100%;
+            label{
+                width: 10%;
+                text-align: left;
+                margin-right: 10px;
+                font-size: 14px;
+                color: #666666;
+                font-weight: 500;
+            }
+            input{
+                width: 86.5%;
+                height: 30px;
+                color: #999999;
+            }
+            input::-webkit-input-placeholder{
+                color: #999999;
+                font-size: 12px;
+            }
+            textarea{
+                width: 86.5%;
+                color: #999999;
+                font-size: 12px;
+                border-radius: 4px;
+                outline:none;
+                &:focus{
+                    border:1px solid#75b94b ;
+                }
+            }
+            textarea::-webkit-input-placeholder{
+                color: #999999;
+                font-size: 12px;
+            }
+        }
+        .batch-num{
+            display: inline-block;
+            width: 49.5%;
+            label{
+                width: 10%;
+                text-align: left;
+            }
+            input{
+                width: 65%;
+                margin-left: 22px;
+            }
+            &:nth-of-type(2){
+                label{
+                    margin-left: 20px;
+                }
+            }
+        }
+        .batch-btn{
+            text-align: center;
+            margin-top: 20px;
+            button{
+                width: 116px;
+            }
+            .cancel-btn{
+                margin-right: 40px;
+            }
+        }
+    }
+}

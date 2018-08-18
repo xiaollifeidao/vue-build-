@@ -45,15 +45,14 @@ function getEntry() {
         if (matchs) {
             files[matchs[1]] = path.resolve(srcDir, 'js', item);
         } else {
-            var dirss = fs.readdirSync(path.join(path.resolve(srcDir, 'js'), item))
+			var dirss = fs.readdirSync(path.join(path.resolve(srcDir, 'js'), item))
             dirss.forEach(function (items) {
                 matchs = items.match(/(.+)\.js$/);
                 matchs[1] = item + '\\' + matchs[1];
-                console.log(matchs[1]+'555')
-                files[matchs[1]] = path.resolve(srcDir, 'js', item) + '\\' + dirss;
+                files[matchs[1]] = path.resolve(srcDir, 'js', item) + '\\' + matchs[0];
             });
-			// module.exports.plugins.push(new htmlWebpackPlugin(getHtmlConfig(item, matchs[1], element.html)));
-        }
+		}
+		// console.log(files[matchs[1]]+'555')
     });
     return files;
 }
@@ -77,6 +76,11 @@ module.exports = {
 		new copyWebpackPlugin([{
 			from: path.resolve(__dirname, "../src/lib"),
 			to: './lib',
+			ignore: ['.*']
+		}]),
+		new copyWebpackPlugin([{
+			from: path.resolve(__dirname, "../src/fonts"),
+			to: './fonts',
 			ignore: ['.*']
 		}]),
 		new copyWebpackPlugin([{

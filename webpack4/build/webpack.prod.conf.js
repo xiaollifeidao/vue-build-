@@ -23,6 +23,7 @@ const webpackConfigProd = {
 	resolve: {
 		extensions: ['.js', '.jsx', '.json'],
 		alias: {
+			fonts: srcDir + "/fonts/",
 			sass: srcDir + "/sass/",
 			img: srcDir + "/images/",
 			css: srcDir + "/css/",

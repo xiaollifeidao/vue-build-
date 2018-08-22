@@ -36,17 +36,21 @@ const rules = [{
 				name: '[path][name].[ext]',
 				context:'src',
 				// 图片文件输出的文件夹
-				publicPath:'/home/newbfyj/',
+				// publicPath:'/home/newbfyj/',
+				publicPath:'../../',
 				outputPath: "./"
 			}
 		}]
 	},
 	{
-	test: /\.(ttf|eot|woff|woff2)$/,
-	loader: 'file-loader',
-	options: {
-		name: 'fonts/[name].[ext]',
-	},
+    test: /\.(eot|otf|ttf|woff|woff2)\w*/,
+		loader: 'url-loader',
+		options: {
+			limit: 1,
+			name: '[path][name].[ext]',
+			publicPath:'../../',
+			context:'src',
+		}, 
 	},
 	{
 		test: /\.html$/,

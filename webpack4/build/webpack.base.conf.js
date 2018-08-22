@@ -88,6 +88,11 @@ module.exports = {
 			to: './html',
 			ignore: ['.*']
 		}]),
+		new copyWebpackPlugin([{
+			from: path.resolve(__dirname, "../src/sass/plugin"),
+			to: './css/plugin',
+			ignore: ['.*']
+		}]),
 		// 消除冗余的css代码
 		new purifyCssWebpack({
 			paths: glob.sync(path.join(__dirname, "../src/html/**/*.html"))

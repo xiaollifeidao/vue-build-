@@ -23,10 +23,14 @@ const webpackConfigProd = {
 	resolve: {
 		extensions: ['.js', '.jsx', '.json'],
 		alias: {
+			// bootstap: srcDir + "/sass/bootstrap.min.css",
 			fonts: srcDir + "/fonts/",
 			sass: srcDir + "/sass/",
 			img: srcDir + "/images/",
 			css: srcDir + "/css/",
+			lib: srcDir + "/lib/",
+			libCss: srcDir + "/lib/css/",
+			libJs: srcDir + "/lib/js/",
 		}
 	},
 	devServer: {
@@ -54,11 +58,14 @@ const webpackConfigProd = {
 		new extractTextPlugin({
 			// filename: 'css/[name].[hash:8].min.css',
 			filename: 'css/[name].css',
+			ignoreOrder: true
 		}),
 		//压缩css
 		new OptimizeCSSPlugin({
 			cssProcessorOptions: {
-				safe: true
+				safe: true,
+				map: { inline: false }, 
+         		autoprefixer: { remove: false }  //添加对autoprefixer的配置
 			}
 		}),
 		//上线压缩 去除console等信息webpack4.x之后去除了webpack.optimize.UglifyJsPlugin

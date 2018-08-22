@@ -25,3 +25,6 @@
     } else {
         alert('该浏览器不全部支持File APIs的功能');
     }
+
+    console.log($("form").serialize()); //输出字符串
+    console.log($("form").serializeArray()); //输出数组

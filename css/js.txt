@@ -28,3 +28,16 @@
 
     console.log($("form").serialize()); //输出字符串
     console.log($("form").serializeArray()); //输出数组
+
+    tencent://Message/?Uin=1282954559&amp;websiteName=q-zone.qq.com&amp;Menu=yes  调用qq
+
+
+    click：单击
+dblclick：双击
+mousedown：鼠标按下
+mouseup：鼠标抬起
+mouseover：鼠标悬浮
+mouseout：鼠标离开
+mousemove：鼠标移动
+mouseenter：鼠标进入
+mouseleave：鼠标离开

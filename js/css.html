@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>扇形绘制</title>
+    <style>
+        .muscle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background: -webkit-linear-gradient(#b380ff 0%, #55a5fe 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#b380ff 0%, #55a5fe 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#b380ff 0%, #55a5fe 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#b380ff 0%, #55a5fe 100%); /* 标准的语法 */
+            z-index: 10;
+        }
+
+        .fat {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: #ffbb4f;
+            top: 9px;
+            left: 239px;
+            z-index: 9;
+        }
+
+        .other {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: #ff6260;
+            top: 9px;
+            left: 469px;
+            z-index: 8;
+        }
+
+        .pre {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            line-height: 150px;
+            border-radius: 100px;
+            background-color: #fff;
+            top: 32px;
+            left: 32px;
+            z-index: 11;
+        }
+
+        .sx1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: rotate(0deg);
+            clip: rect(0px, 100px, 200px, 0px);
+            /*这个clip属性用来绘制半圆，在clip的rect范围内的内容显示出来，使用clip属性，元素必须是absolute的 */
+            border-radius: 100px;
+            background-color: #f2f6f9;
+        }
+
+        .sx2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: rotate(0deg);
+            clip: rect(0px, 100px, 200px, 0px);
+            border-radius: 100px;
+            background-color: #f2f6f9;
+        }
+
+        .muscle-sx3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: rotate(30deg);
+            clip: rect(0px, 200px, 200px, 100px);
+            border-radius: 100px;
+            background: -webkit-linear-gradient(#b380ff 0%, #55a5fe 100%); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(#b380ff 0%, #55a5fe 100%); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(#b380ff 0%, #55a5fe 100%); /* Firefox 3.6 - 15 */
+            background: linear-gradient(#b380ff 0%, #55a5fe 100%); /* 标准的语法 */
+        }
+
+        .fat-sx3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: rotate(30deg);
+            clip: rect(0px, 200px, 200px, 100px);
+            border-radius: 100px;
+            background-color: #ffbb4f;
+        }
+
+        .other-sx3 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: rotate(30deg);
+            clip: rect(0px, 200px, 200px, 100px);
+            border-radius: 100px;
+            background-color: #ff6260;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="muscle">
+        <div class="sx1"></div>
+        <div class="sx2"></div>
+    </div>
+
+    <div class="fat">
+        <div class="sx1"></div>
+        <div class="sx2"></div>
+    </div>
+
+    <div class="other">
+        <div class="sx1"></div>
+        <div class="sx2"></div>
+    </div>
+    <div class="pre" data-num="30"></div>
+</body>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script>
+    $(function () {
+        var muscle = 0, fat = 10, other = 10;
+            num = $('.pre').data('num');
+        var timer = setInterval(() => {
+            muscle++;
+            if (Math.floor(num) == muscle) {
+                clearInterval(timer);
+            } else if (num == 0) {
+                muscle = 0;
+                $('.pre').html(0 + '%');
+            }
+            if (muscle > 50) {
+                $(".muscle .sx2").addClass("muscle-sx3");
+                $(".muscle .muscle-sx3").css("transform", "rotate(" + (muscle / 5 * 18 - 180) + "deg)").css("color", "#fff");
+            } else {
+                $(".muscle .sx2").css("transform", "rotate(" + (muscle / 5 * 18 - 180) + "deg)").css("color", "#fff");
+            }
+            if ((fat + muscle) > 50) {
+                $(".fat .sx2").addClass("fat-sx3");
+                $(".fat .fat-sx3").css("transform", "rotate(" + ((fat + muscle) / 5 * 18 - 180) + "deg)").css("color", "#fff");
+            } else {
+                $(".fat .sx2").css("transform", "rotate(" + ((fat + muscle) / 5 * 18 - 180) + "deg)").css("color", "#fff");
+            }
+            if ((other + fat + muscle) > 50) {
+                $(".other .sx2").addClass("other-sx3");
+                $(".other .other-sx3").css("transform", "rotate(" + ((other + fat + muscle) / 5 * 18 - 180) + "deg)").css("color", "#fff");
+            } else {
+                $(".other .sx2").css("transform", "rotate(" + ((other + fat + muscle) / 5 * 18 - 180) + "deg)").css("color", "#fff");
+            }
+            $('.pre').html(muscle + '%');
+        }, 20)
+    })
+</script>
+</html>

@@ -136,3 +136,61 @@ js实现文本复制
             transition: all 0.3s ease-out; 
             transform: rotate(-180deg);
         }
+
+textarea{
+    width: 100%;
+    height: 110px;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    padding: 20px;
+}
+textarea::-webkit-input-placeholder{
+    color: #999999;
+    font-size: 12px;
+}
+
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+	color:    #999;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:    #999;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color:    #999;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color:    #999;
+}
+
+
+.userInfos {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 96%;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/ 
+.userInfos::-webkit-scrollbar   
+{   
+    width: 5px;   
+    height: 5px;   
+    background-color: #474753;   
+}  
+/*定义滚动条轨道 内阴影+圆角*/   
+.userInfos::-webkit-scrollbar-track   
+{   
+    -webkit-box-shadow: inset 0 0 6px #474753;   
+    border-radius: 5px;   
+    background-color: #474753;   
+} 
+/*定义滑块 内阴影+圆角*/   
+.userInfos::-webkit-scrollbar-thumb   
+{   
+    border-radius: 5px;   
+    -webkit-box-shadow: inset 0 0 6px #474753;   
+    background-color: #F5F5F5;   
+} 
+
+解决input 聚焦变黄
+input:-webkit-autofill { box-shadow: 0 0 0px 1000px white inset;}

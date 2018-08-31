@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="bdsharebuttonbox" data-tag="share_1">
+        <a class="bds_mshare" data-cmd="mshare"></a>
+        <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+        <a class="bds_tsina" data-cmd="tsina"></a>
+        <a class="bds_baidu" data-cmd="baidu"></a>
+        <a class="bds_renren" data-cmd="renren"></a>
+        <a class="bds_tqq" data-cmd="tqq"></a>
+        <a class="bds_more" data-cmd="more"></a>
+        <a class="bds_count" data-cmd="count"></a>
+    </div> -->
+    <div class="bdsharebuttonbox" data-tag="share_1">
+        <!--其中class="bdsharebuttonbox不可以改动，如果只有一个分享的话data-tag可以删除掉，它用于设置多组分享按钮-->
+        <!--下面的每个a标签除了data-cmd需要正确设置以外，其他都可以自定义，可添加，可删除，可对换，其中data-cmd的值在http://share.baidu.com/code/advance#toid可以找到，data-cmd用于指定是哪一种分享-->
+        <a class="bds_tqq" data-cmd="tqq"></a>
+        <a class="bds_tsina" data-cmd="tsina"></a>
+        <a class="bds_qzone" data-cmd="qzone"></a>
+        <a class="bds_sqq" data-cmd="sqq"></a>
+        <a class="bds_tqf" data-cmd="tqf"></a>
+        <a class="bds_kaixin001" data-cmd="kaixin001"></a>
+        <a class="bds_renren" data-cmd="renren"></a>
+        <a class="bds_copy" data-cmd="copy"></a>
+        <!--copy会复制标题和链接，所以页面要设置好title-->
+    </div>
+    <script>
+        //通用分享设置，更详细的设置可以查看http://share.baidu.com/code/advance#config-common
+        window._bd_share_config = {
+            common: {
+                bdText: '我是通用分享设置',
+                bdDesc: '我是通用分享设置',
+                bdComment: '我是通用分享设置,会出现在发送给QQ好友里',
+                bdUrl: 'http://test.binfenyoujia.cn/',
+                bdPic: 'http://test.binfenyoujia.cn/home/newbfyj/img/logo-blank.png',
+                bdSize: 24//按钮大小16/24/32
+            },
+            share: { //普通页面分享按钮必须有这个属性，可放空，也可以设置属性覆盖上面common的属性值。下面会给出设置多组分享按钮如何使用这个share
+                //bdCustomStyle:"自定义样式"，可使用自定义样式来设置分享按钮所使用的图标
+            }
+        }
+        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+        <!--data-tag用于设置多组分享-->
+        <!--下面的每个a标签除了data-cmd需要正确设置以外，其他都可以自定义，可添加，可删除，可对换其中data-cmd的值在http://share.baidu.com/code/advance#toid可以找到，data-cmd用于指定是哪一种分享-->
+    <!-- <div class="bdsharebuttonbox" data-tag="share_1">
+        <a class="bds_tqq" data-cmd="tqq"></a>
+        <a class="bds_tsina" data-cmd="tsina"></a>
+        <a class="bds_qzone" data-cmd="qzone"></a>
+        <a class="bds_sqq" data-cmd="sqq"></a>
+        <a class="bds_tqf" data-cmd="tqf"></a>
+        <a class="bds_kaixin001" data-cmd="kaixin001"></a>
+        <a class="bds_renren" data-cmd="renren"></a>
+        <a class="bds_copy" data-cmd="copy"></a>
+    </div> -->
+    <!--copy会复制标题和链接，所以页面要设置好title-->
+    <!-- <div class="bdsharebuttonbox" data-tag="share_2">
+        <a class="bds_tqq" data-cmd="tqq"></a>
+        <a class="bds_tsina" data-cmd="tsina"></a>
+        <a class="bds_qzone" data-cmd="qzone"></a>
+        <a class="bds_sqq" data-cmd="sqq"></a>
+        <a class="bds_tqf" data-cmd="tqf"></a>
+        <a class="bds_kaixin001" data-cmd="kaixin001"></a>
+        <a class="bds_renren" data-cmd="renren"></a>
+        <a class="bds_copy" data-cmd="copy"></a>
+    </div> -->
+    <!-- <script>
+        window._bd_share_config = {
+            common: {
+                bdText: '多组分享设置bdText',
+                bdDesc: '多组分享设置bdDesc',
+                bdComment: '多组分享设置bdComment',
+                bdUrl: 'http://www.baidu.com/',
+                bdPic: 'http://share.baidu.com/static/base/img/logo.gif',
+                bdSize: 16 //按钮大小16/24/32
+            },
+            share: [ //多组分享使用数组,每一个分享对应一个对象
+                {
+                    tag: 'share_1', //这个设置与上面div的data-tag标签的值一致
+                    bdText: '多组分享设置bdText share_1',
+                    bdUrl: 'http://www.baidu.com/',
+                    bdSize: 32
+                },
+                {
+                    tag: 'share_2',
+                    bdUrl: 'http://www.google.com/'
+                    //bdSize没有设置，调用common的设置。
+                }
+            ]
+        }
+        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script> -->
+<!-- 
+    <script>
+        window._bd_share_config = {
+            common: {
+                bdText: '多组分享设置bdText',
+                bdDesc: '多组分享设置bdDesc',
+                bdComment: '多组分享设置bdComment',
+                bdUrl: 'http://www.baidu.com/',
+                bdPic: 'http://share.baidu.com/static/base/img/logo.gif',
+                bdSize: 16,        //按钮大小16/24/32
+                bdMini: 1,             //设置浮窗按钮的列数，值为1|2|3
+                bdMiniList: ['tqq', 'tsina', 'qzone', 'sqq', 'tqf', 'kaixin001', 'renren', 'copy']    //设置按钮顺序，根据分享id设置，与普通分享的data-cms一样，http://share.baidu.com/code/advance#toid
+            },
+            slide: {         //slide的设置与share属性类似, 多个浮窗同样使用数组
+                bdImg: 2,         //颜色0｜1｜2｜3｜4｜5｜6｜7｜8    
+                bdPos: 'left',     //位置left|right，浮在左边还是右边
+                bdTop: 240      //距窗口顶部的距离，单位是px
+            }
+        }
+        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+    <img src="http://share.baidu.com/static/web/img/imagesharepreview.jpg" data-tag="imgshare_1" />
+    <script>
+        window._bd_share_config = {
+            common: {
+                bdText: '多组分享设置bdText',
+                bdDesc: '多组分享设置bdDesc',
+                bdComment: '多组分享设置bdComment',
+                bdUrl: 'http://www.baidu.com/',
+                bdPic: 'http://share.baidu.com/static/base/img/logo.gif'
+            },
+            image: {         //image的设置与share属性类似, 多个设置使用数组
+                tag: 'imgshare_1',
+                viewPos: 'top',         //值为top|bottom
+                viewList: ['tqq', 'tsina', 'qzone', 'sqq', 'tqf', 'kaixin001', 'renren', 'copy'],
+                viewSize: 16             //16|24|32
+                //viewColor : 'black',    //底色 white|black
+                //viewType : 'list',         //分享样式 list|collection
+            }
+        }
+        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+    <p> class="textshare">划词分享，如果只对部分文字设置这个功能，需要在配置里设置bdContainerClass这个属性，并且在对应的文字外层加一个class属性，比如现在这段字，就加了一个叫textshare的class，并且在下面的代码设置里（查看源码），加了一bdContainerClass:
+        'textshare'这一属性。所以对这段字随便划词就会有分享按钮了。</p>
+    <script>
+        //通用分享设置，更详细的设置可以查看http://share.baidu.com/code/advance#config-common
+        window._bd_share_config = {
+            common: {
+                bdText: '多组分享设置bdText',
+                bdDesc: '多组分享设置bdDesc',
+                bdComment: '多组分享设置bdComment',
+                bdUrl: 'http://www.baidu.com/',
+                bdPic: 'http://share.baidu.com/static/base/img/logo.gif'
+            },
+            selectShare: {
+                bdSelectMiniList: ['tqq', 'tsina', 'qzone', 'sqq', 'tqf', 'kaixin001', 'renren', 'copy'],
+                bdContainerClass: 'textshare'
+            }
+        }
+        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script> -->
+</body>
+</html>

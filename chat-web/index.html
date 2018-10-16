@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>私人聊天室</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font: 13px Helvetica, Arial;
+    }
+
+    form {
+      background: #000;
+      padding: 3px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    form input {
+      border: 0;
+      padding: 10px;
+      width: 90%;
+      margin-right: .5%;
+    }
+
+    form button {
+      width: 9%;
+      background: rgb(130, 224, 255);
+      border: none;
+      padding: 10px;
+    }
+
+    #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #messages li {
+      padding: 5px 10px;
+    }
+
+    #messages li:nth-child(odd) {
+      background: #eee;
+    }
+
+    #info {
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="info"></div>
+  <ul id="messages"></ul>
+  <form action="">
+    <input id="m" autocomplete="off" />
+    <button>Send</button>
+  </form>
+  <script src="http://cdn.bootcss.com/socket.io/1.7.1/socket.io.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+    //页面加载的时候随机生成一个用户名
+    var user = "user" + Math.floor(Math.random() * 1000);
+    //打开一个socket,io()方法可以有namespace参数，默认为`/`，具体用法见官方
+    var socket = io();
+    //发送一个用户注册事件，在服务器端注册用户名
+    socket.emit('chat-reg', { user: user });
+    //将用户名显示在信息栏
+    $("#info").text("您的用户名：" + user);
+    $('form').submit(function () {
+      //发送聊天信息
+      socket.emit('chat-data', { user: user, msg: $('#m').val() });
+      $('#m').val('');
+      return false;
+    });
+    //监听服务端发送的聊天信息，并将其显示在页面中
+    socket.on('chat-data', function (data) {
+      $('#messages').append($('<li>').text("[" + data.user + "]:" + data.msg));
+    });
+    //注册成功后，在控制台显示返回的信息
+    socket.on('chat-reg', function (data) {
+      console.log(JSON.stringify(data));
+    });
+  </script>
+</body>
+
+</html>

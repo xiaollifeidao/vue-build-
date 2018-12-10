@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link href="./city-picker.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div style="position: relative;height: 30px;">
+			<input id="city-picker3" style="height: 30px;" readonly type="text" placeholder="请选择所在地区" data-toggle="city-picker">
+		</div>
+	</body>
+
+		<!--js文件-->
+		<script src="./jquery-min.js"></script>
+		<script src="./city-picker.data.js"></script>
+		<script src="./city-picker.js"></script>
+		<script>
+			$(function() {
+				//设置地址栏
+				  $(".city-picker-span").click(function(event){
+				  	event.preventDefault();
+				  	$(this).css({'backgroundColor':'#fff',"border-color":"#75b94b"});
+				  })
+				
+			})
+		</script>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style id="styles"></style>
+    <title>海绵宝宝</title>
+</head>
+
+<body style="overflow-x: hidden">
+    <main style="position: fixed;">
+        <div class="bubbles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="shadow"></div>
+        <div class="leg">
+            <main>
+                <div class="sock"></div>
+            </main>
+            <div class="pants"></div>
+            <div class="shoe"></div>
+        </div>
+        <div class="leg right">
+            <main>
+                <div class=" sock"></div>
+            </main>
+            <div class="pants"></div>
+            <div class="shoe"></div>
+        </div>
+        <div class="arm">
+            <main></main>
+            <div class="sleeve"></div>
+            <div class="hand">
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+            </div>
+        </div>
+        <div class="arm right">
+            <main></main>
+            <div class="sleeve"></div>
+            <div class="hand">
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+                <div class="finger"></div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="pants">
+                <div class="belt">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="tie">
+            </div>
+        </div>
+        <div class="head">
+            <div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+                <div class="headOutCircle"></div>
+            </div>
+            <div>
+                <div class="headInnerCircle"></div>
+                <div class="headInnerCircle"></div>
+                <div class="headInnerCircle"></div>
+                <div class="headInnerCircle"></div>
+                <div class="headInnerCircle"></div>
+                <div class="headInnerCircle"></div>
+                <div class="headInnerCircle"></div>
+            </div>
+            <div>
+                <div class="eyelashs">
+                    <div class="eyelash"></div>
+                    <div class="eyelash"></div>
+                    <div class="eyelash"></div>
+                </div>
+                <div class="eyelashs right">
+                    <div class="eyelash"></div>
+                    <div class="eyelash"></div>
+                    <div class="eyelash"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye right">
+                    <div class="pupil"></div>
+                </div>
+            </div>
+            <div class="mouth">
+                <div class="tooth"></div>
+                <div class="tooth right"></div>
+                <div class="tongue"></div>
+            </div>
+        </div>
+    </main>
+    <pre id="cssCode" style="color: #0003"></pre>
+    <script>
+        let css =
+            `
+    body {
+      background-color: #86d1da;
+    }
+    body>main {
+      width: 700px;
+      height: 600px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%)
+    }
+    @media (max-width: 700px) {
+      body>main {
+        width: 700px;
+        height: 600px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%) scale(0.5);
+      }
+    }
+    .head {
+      height: 156px;
+      background: #ffd71e;
+      position: absolute;
+      left: 273px;
+      width: 156px;
+      top: 173px;
+    }
+    .headOutCircle {
+      width: 36px;
+      height: 36px;
+      background: #ffd71e;
+      border-radius: 50%;
+      position: absolute;
+      top: -8px;
+      left: -20px;
+    }
+    .headOutCircle:nth-child(1) {
+      top: -8px;
+      left: -20px;
+    }
+    .headOutCircle:nth-child(2) {
+      top: -8px;
+      left: 0px;
+    }
+    .headOutCircle:nth-child(3) {
+      top: -8px;
+      left: 29px;
+    }
+    .headOutCircle:nth-child(4) {
+      top: -8px;
+      left: 61px;
+    }
+    .headOutCircle:nth-child(5) {
+      top: -8px;
+      left: 90px;
+    }
+    .headOutCircle:nth-child(6) {
+      top: -8px;
+      left: 117px;
+    }
+    .headOutCircle:nth-child(7) {
+      top: -8px;
+      left: 142px;
+    }
+    .headOutCircle:nth-child(8) {
+      top: 21px;
+      left: -19px;
+    }
+    .headOutCircle:nth-child(9) {
+      top: 46px;
+      left: -16px;
+    }
+    .headOutCircle:nth-child(10) {
+      top: 71px;
+      left: -15px;
+    }
+    .headOutCircle:nth-child(11) {
+      top: 98px;
+      left: -12px;
+    }
+    .headOutCircle:nth-child(12) {
+      top: 124px;
+      left: -8px;
+    }
+    .headOutCircle:nth-child(13) {
+      top: 21px;
+      left: 139px;
+    }
+    .headOutCircle:nth-child(14) {
+      top: 46px;
+      left: 136px;
+    }
+    .headOutCircle:nth-child(15) {
+      top: 71px;
+      left: 134px;
+    }
+    .headOutCircle:nth-child(16) {
+      top: 98px;
+      left: 131px;
+    }
+    .headOutCircle:nth-child(17) {
+      top: 124px;
+      left: 128px;
+    }
+    .headOutCircle:nth-child(18) {
+      top: 131px;
+      left: 13px;
+    }
+    .headOutCircle:nth-child(19) {
+      top: 131px;
+      left: 45px;
+    }
+    .headOutCircle:nth-child(20) {
+      top: 131px;
+      left: 73px;
+    }
+    .headOutCircle:nth-child(21) {
+      top: 131px;
+      left: 104px;
+    }
+    .headInnerCircle {
+      width: 10px;
+      height: 10px;
+      top: 0px;
+      left: 0px;
+      box-shadow: inset 0 0 15px 0 #0002;
+      background-color: #e6c135;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .headInnerCircle:nth-child(1) {
+      width: 24px;
+      height: 24px;
+      top: 27px;
+      left: 10px;
+    }
+    .headInnerCircle:nth-child(2) {
+      width: 13px;
+      height: 13px;
+      top: 64px;
+      left: 5px;
+    }
+    .headInnerCircle:nth-child(3) {
+      width: 13px;
+      height: 13px;
+      top: 113px;
+      left: 16px;
+    }
+    .headInnerCircle:nth-child(4) {
+      width: 25px;
+      height: 25px;
+      top: 130px;
+      left: 25px;
+    }
+    .headInnerCircle:nth-child(5) {
+      width: 13px;
+      height: 13px;
+      top: 21px;
+      left: 135px;
+    }
+    .headInnerCircle:nth-child(6) {
+      width: 32px;
+      height: 32px;
+      top: 97px;
+      left: 126px;
+    }
+    .headInnerCircle:nth-child(7) {
+      width: 14px;
+      height: 14px;
+      top: 142px;
+      left: 119px;
+    }
+    .eye {
+      position: absolute;
+      width: 57px;
+      height: 57px;
+      left: 22px;
+      top: 27px;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 0 10px 0 #0002;
+    }
+    .eye.right {
+      left: 78px;
+    }
+    .eye .pupil {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      left: 31px;
+      top: 20px;
+      background-color: #111;
+      border: 3px solid #7ecbff;
+      box-shadow: 0 0 0 3px #111, 0 0 10px 0 #000;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+    .eye.right .pupil {
+      left: 8px;
+    }
+    .eyelashs {
+      position: absolute;
+      left: 22px;
+      top: 27px;
+    }
+    .eyelashs.right {
+      position: absolute;
+      left: 130px;
+      top: 27px;
+      transform: scaleX(-1)
+    }
+    .eyelashs .eyelash {
+      position: absolute;
+      width: 3px;
+      height: 20px;
+      left: 12px;
+      top: -8px;
+      transform: rotate(-29deg);
+      background-color: #111;
+    }
+    .eyelashs .eyelash:nth-child(2) {
+      left: 24px;
+      top: -12px;
+      transform: rotate(-8deg);
+    }
+    .eyelashs .eyelash:nth-child(3) {
+      left: 34px;
+      top: -12px;
+      transform: rotate(20deg);
+    }
+    .mouth {
+      position: absolute;
+      width: 82px;
+      height: 41px;
+      left: 37px;
+      bottom: 23px;
+      border-bottom-left-radius: 41px;
+      border-bottom-right-radius: 41px;
+      overflow: hidden;
+      background-color: #d0021b;
+      box-shadow: inset 0 0 20px 0 #0006;
+    }
+    .mouth .tooth {
+      position: absolute;
+      top: -2px;
+      left: 23px;
+      height: 18px;
+      width: 16px;
+      transform: rotate(4deg);
+      box-shadow: 0 0 6px 0 #0003;
+      background: linear-gradient(to bottom, #cacaca 0%, #ffffff 41%, #ffffff 100%);
+    }
+    .mouth .tooth.right {
+      left: 44px;
+      transform: rotate(-7deg);
+    }
+    .tongue {
+      position: absolute;
+      bottom: 0;
+      left: 21px;
+      width: 40px;
+      height: 17px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      background-color: #ff8888;
+    }
+    .body {
+      position: absolute;
+      left: 282px;
+      top: 315px;
+      width: 138px;
+      height: 70px;
+      background: linear-gradient(to bottom, #cacaca 0%, #ffffff 50%, #ffffff 100%);
+    }
+    .body .tie {
+      position: absolute;
+      left: 60px;
+      top: 0px;
+      font-size: 0;
+    }
+    .body .tie::before {
+      content: '';
+      display: block;
+      border-top: none;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: 43px solid #f0657d;
+    }
+    .body .tie::after {
+      content: '';
+      display: block;
+      border-top: 15px solid #f0657d;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-bottom: none;
+    }
+    .body .pants {
+      position: absolute;
+      width: 100%;
+      height: 30px;
+      bottom: 0;
+      background-color: #aa7c51;
+    }
+    .body .pants .belt>div {
+      margin-top: 6px;
+      float: left;
+      height: 7px;
+      background-color: #633d1a;
+      box-shadow: inset 0 0 6px 0 #0009;
+    }
+    .body .pants .belt>div:nth-child(1) {
+      margin-left: 8px;
+      width: 24px;
+    }
+    .body .pants .belt>div:nth-child(2) {
+      margin-left: 11px;
+      width: 21px;
+    }
+    .body .pants .belt>div:nth-child(3) {
+      margin-left: 10px;
+      width: 22px;
+    }
+    .body .pants .belt>div:nth-child(4) {
+      margin-left: 12px;
+      width: 21px;
+    }
+    .arm {
+      position: absolute;
+      left: 250px;
+      top: 298px;
+      height: 126px;
+      width: 32px;
+    }
+    .arm .sleeve {
+      position: absolute;
+      left: 8px;
+      top: 1px;
+      width: 20px;
+      height: 46px;
+      border-radius: 10px;
+      background: linear-gradient(to right, #ffffff 0%, #ffffff 30%, #dfdfdf 100%);
+    }
+    .arm main {
+      position: absolute;
+      left: 15px;
+      top: 40px;
+      width: 7px;
+      height: 60px;
+      background: linear-gradient(to bottom, #ea9b1c 0%, #ffd71e 20%, #ffd71e 100%);
+    }
+    .arm .hand {
+      position: absolute;
+      left: 6px;
+      bottom: 10px;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background-color: #ffd71e;
+    }
+    .arm .hand .finger {
+      position: absolute;
+      border-radius: 2px;
+      background-color: #ffd71e;
+    }
+    .arm .hand .finger:nth-child(1) {
+      left: -2px;
+      top: 11px;
+      width: 4px;
+      height: 14px;
+      transform: rotate(38deg);
+    }
+    .arm .hand .finger:nth-child(2) {
+      left: 4px;
+      top: 18px;
+      width: 4px;
+      height: 14px;
+      transform: rotate(19deg);
+    }
+    .arm .hand .finger:nth-child(3) {
+      left: 12px;
+      top: 18px;
+      width: 4px;
+      height: 14px;
+      transform: rotate(-1deg);
+    }
+    .arm .hand .finger:nth-child(4) {
+      left: 20px;
+      top: 14px;
+      width: 4px;
+      height: 11px;
+      transform: rotate(-36deg);
+    }
+    .arm.right {
+      left: 421px;
+      transform: scaleX(-1)
+    }
+    .leg {
+      position: absolute;
+      left: 310px;
+      top: 380px;
+      height: 88px;
+      width: 24px;
+    }
+    .leg .pants {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 18px;
+      background: linear-gradient(to bottom, #876640 1%, #aa7c51 100%);
+    }
+    .leg main {
+      position: absolute;
+      left: 7px;
+      top: 9px;
+      height: 60px;
+      width: 8px;
+      background: linear-gradient(to bottom, #ea9b1c 0%, #ffd71e 20%, #ffd71e 100%);
+    }
+    .leg main .sock {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 33px;
+      font-size: 0;
+      background-color: #fff;
+    }
+    .leg main .sock::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #6290FF;
+    }
+    .leg main .sock::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #D2000D;
+    }
+    .leg .shoe {
+      position: absolute;
+      bottom: 0;
+    }
+    .leg .shoe::before {
+      content: '';
+      bottom: 7px;
+      left: 2px;
+      position: absolute;
+      height: 19px;
+      width: 16px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      background-color: #111;
+    }
+    .leg .shoe::after {
+      content: '';
+      bottom: 6px;
+      left: -6px;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      box-shadow: 1px -1px 0 6px #111;
+      background-color: #fff;
+    }
+    .leg.right {
+      transform: scaleX(-1);
+      left: 368px;
+    }
+    .shadow {
+      position: absolute;
+      top: 452px;
+      left: 241px;
+      width: 231px;
+      border-radius: 100%;
+      height: 24px;
+      background-color: #0001;
+    }
+    .bubbles {
+      position: absolute;
+    }
+    .bubbles>div {
+      position: absolute;
+      background-color: #fff6;
+      border-radius: 50%;
+    }
+    .bubbles>div:nth-child(1) {
+      left: 182px;
+      top: 240px;
+      width: 31px;
+      height: 31px;
+    }
+    .bubbles>div:nth-child(2) {
+      left: 204px;
+      top: 219px;
+      width: 13px;
+      height: 13px;
+    }
+    .bubbles>div:nth-child(3) {
+      left: 184px;
+      top: 181px;
+      width: 20px;
+      height: 20px;
+    }
+    .bubbles>div:nth-child(4) {
+      left: 198px;
+      top: 170px;
+      width: 8px;
+      height: 8px;
+    }
+    .bubbles>div:nth-child(5) {
+      left: 198px;
+      top: 144px;
+      width: 10px;
+      height: 10px;
+    }
+    .bubbles>div:nth-child(6) {
+      left: 506px;
+      top: 387px;
+      width: 23px;
+      height: 23px;
+    }
+    .bubbles>div:nth-child(7) {
+      left: 537px;
+      top: 373px;
+      width: 11px;
+      height: 11px;
+    }
+    .bubbles>div:nth-child(8) {
+      left: 521px;
+      top: 323px;
+      width: 18px;
+      height: 18px;
+    }
+    .bubbles>div:nth-child(9) {
+      left: 515px;
+      top: 286px;
+      width: 11px;
+      height: 11px;
+    }
+    .bubbles>div:nth-child(10) {
+      left: 494px;
+      top: 201px;
+      width: 10px;
+      height: 10px;
+    }`
+        let style = document.getElementById('styles')
+        let code = document.getElementById('cssCode')
+        let n = 0
+        let id = setInterval(() => {
+            n += 100
+            style.innerText = css.slice(0, n)
+            // code.innerText = style.innerText
+            window.scrollTo(0, document.documentElement.offsetHeight)
+            if (n >= css.length) {
+                clearInterval(id)
+            }
+        }, 100);
+    </script>
+</body>
+
+</html>
